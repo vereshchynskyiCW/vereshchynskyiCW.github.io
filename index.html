@@ -2,8 +2,26 @@
 <html>
     <head>
         <title>Example</title>
+	<script src="https://speed-dream-8076-dev-ed.scratch.my.salesforce-sites.com/page/lightning/lightning.out.js"></script>
+
+<script>
+  $Lightning.use(
+    "c:ltngOutApp",
+    function () {
+      $Lightning.createComponent(
+        "c:bookingManager",
+        {"configName": "config", "language": "en-US"},
+        "lightningLocator",
+        function (cmp) {},
+      );
+    },
+    "https://speed-dream-8076-dev-ed.scratch.my.salesforce-sites.com/page/",
+  );
+</script>
+
     </head>
     <body>
         <p>Hello, World!</p>
+        <div id="lightningLocator" />
     </body>
 </html>
