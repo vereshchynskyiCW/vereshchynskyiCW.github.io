@@ -10,14 +10,12 @@
   <div data-lightning-out="true" class="comp"></div>
 
   <script>
-        function load() {
             const appName = 'c:ltngOutApp';
             const componentName = 'c:shopManager';
             const lightningEndpoint = 'https://speed-dream-8076-dev-ed.scratch.my.salesforce-sites.com/page';
             const targetElement = document.querySelector("[data-lightning-out]");
             const componentAttributes = {
-                configName : 'config',
-                language: document.getElementById('language').value || 'en-US'
+                configName : 'config'
             };
       
             $Lightning.use(
@@ -34,6 +32,5 @@
                 },
                 lightningEndpoint
             );
-        }
   </script>
 </html>
