@@ -2,6 +2,11 @@
 <html>
   <script src="https://speed-dream-8076-dev-ed.scratch.my.salesforce-sites.com/page/lightning/lightning.out.js"></script>
 
+  <select id="language">
+    <option value="en-US">English</option>
+    <option value="de">Deutsch</option>
+  </select>
+
   <div data-lightning-out="true" class="comp"></div>
 
   <script>
@@ -12,7 +17,7 @@
       const targetElement = document.querySelector("[data-lightning-out]");
       const componentAttributes = {
           configName : 'config',
-          language: 'en-US'
+          language: language.value
       };
 
       $Lightning.use(
