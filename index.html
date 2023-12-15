@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Example</title>
-	<script src="https://speed-dream-8076-dev-ed.scratch.my.salesforce-sites.com/page/lightning/lightning.out.js"></script>
+  <script src="https://speed-dream-8076-dev-ed.scratch.my.salesforce-sites.com/page/lightning/lightning.out.js"></script>
 
-<script>
-  $Lightning.use(
-    "c:ltngOutApp",
-    function () {
-      $Lightning.createComponent(
-        "c:bookingManager",
-        {"configName": "config", "language": "en-US"},
-        "lightningLocator",
-        function (cmp) {},
+  <div data-lightning-out="true" class="comp"></div>
+
+  <script>
+
+      const appName = 'c:ltngOutApp';
+      const componentName = 'c:shopManager';
+      const lightningEndpoint = 'https://speed-dream-8076-dev-ed.scratch.my.salesforce-sites.com/page';
+      const targetElement = document.querySelector("[data-lightning-out]");
+      const componentAttributes = {
+          configName : 'config',
+          language: 'en-US'
+      };
+
+      $Lightning.use(
+          appName,
+          function (){
+              $Lightning.createComponent(
+                  componentName,
+                  componentAttributes,
+                  targetElement,
+                  function (cmp){
+                      console.log('lightning component created');
+                  }
+              );
+          },
+          lightningEndpoint
       );
-    },
-    "https://speed-dream-8076-dev-ed.scratch.my.salesforce-sites.com/page/",
-  );
-</script>
-
-    </head>
-    <body>
-        <p>Hello, World!</p>
-        <div id="lightningLocator" />
-    </body>
+  </script>
 </html>
