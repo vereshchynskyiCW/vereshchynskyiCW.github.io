@@ -2,7 +2,7 @@
 <html>
   <script src="https://speed-dream-8076-dev-ed.scratch.my.salesforce-sites.com/page/lightning/lightning.out.js"></script>
 
-  <select id="language">
+  <select id="language" onchange="load()">
     <option value="en-US">English</option>
     <option value="de">Deutsch</option>
   </select>
@@ -10,29 +10,30 @@
   <div data-lightning-out="true" class="comp"></div>
 
   <script>
-
-      const appName = 'c:ltngOutApp';
-      const componentName = 'c:shopManager';
-      const lightningEndpoint = 'https://speed-dream-8076-dev-ed.scratch.my.salesforce-sites.com/page';
-      const targetElement = document.querySelector("[data-lightning-out]");
-      const componentAttributes = {
-          configName : 'config',
-          language: language.value
-      };
-
-      $Lightning.use(
-          appName,
-          function (){
-              $Lightning.createComponent(
-                  componentName,
-                  componentAttributes,
-                  targetElement,
-                  function (cmp){
-                      console.log('lightning component created');
-                  }
-              );
-          },
-          lightningEndpoint
-      );
+        function load() {
+            const appName = 'c:ltngOutApp';
+            const componentName = 'c:shopManager';
+            const lightningEndpoint = 'https://speed-dream-8076-dev-ed.scratch.my.salesforce-sites.com/page';
+            const targetElement = document.querySelector("[data-lightning-out]");
+            const componentAttributes = {
+                configName : 'config',
+                language: document.getElementById('language').value || 'en-US'
+            };
+      
+            $Lightning.use(
+                appName,
+                function (){
+                    $Lightning.createComponent(
+                        componentName,
+                        componentAttributes,
+                        targetElement,
+                        function (cmp){
+                            console.log('lightning component created');
+                        }
+                    );
+                },
+                lightningEndpoint
+            );
+        }
   </script>
 </html>
