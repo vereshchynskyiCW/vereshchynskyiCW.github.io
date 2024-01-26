@@ -9,12 +9,12 @@
 
   <div data-lightning-out="true" class="comp"></div>
   
-  <script lang="de">
+  <script>
             const appName = 'c:shop';
             const componentName = 'c:testCmp';
             const lightningEndpoint = 'https://platform-drive-7012-dev-ed.scratch.my.salesforce-sites.com/page';
             const targetElement = document.querySelector("[data-lightning-out]");
-            const componentAttributes = {};
+            const componentAttributes = {language: 'de'};
       
             $Lightning.use(
                 appName,
