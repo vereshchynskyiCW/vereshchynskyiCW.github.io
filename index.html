@@ -18,7 +18,8 @@
           'client_secret': 'BFD4920A9E80FC38ADBF870D32ABF7179E408DD8EC640E9D2181864E08A1D68D'
         },
         success: (result) => {
-          console.log(result);
+          setTimeout(() => {
+            console.log(result);
           
             const appName = 'c:shop';
             const componentName = 'c:testCmp';
@@ -41,6 +42,8 @@
                 lightningEndpoint,
                 result.access_token
             );
+          }, 2000);
+          
         },
         error: (error) => {console.error(error);}
       });});
