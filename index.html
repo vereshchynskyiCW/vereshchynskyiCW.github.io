@@ -9,6 +9,15 @@
   <div data-lightning-out="true" class="comp"></div>
   
   <script>
+    document.requestStorageAccess().then(
+      () => {
+        console.log("access granted");
+      },
+      () => {
+        console.log("access denied");
+      },
+    );
+    
     jQuery(document).ready(($) => {
       $.post({
         url: 'https://velocity-flow-1819-dev-ed.scratch.my.salesforce.com/services/oauth2/token',
