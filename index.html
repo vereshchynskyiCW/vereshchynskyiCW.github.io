@@ -3,7 +3,7 @@
   <head></head>
   <body>
 
-<script src="https://java-dream-6325-dev-ed.scratch.my.salesforce.com/lightning/lightning.out.js"></script>
+<script src="https://velocity-flow-1819-dev-ed.scratch.my.salesforce.com/lightning/lightning.out.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
   <div data-lightning-out="true" class="comp"></div>
@@ -11,22 +11,24 @@
   <script>
     jQuery(document).ready(($) => {
       $.post({
-        url: 'https://java-dream-6325-dev-ed.scratch.my.salesforce.com/services/oauth2/token',
+        url: 'https://velocity-flow-1819-dev-ed.scratch.my.salesforce.com/services/oauth2/token',
         data: {
           'grant_type': 'client_credentials',
-          'client_id': '3MVG9OjW2TAjFKUunadDxCgQBU03QipW9ZfNbJtzhlQbs.HqKcIzLG67eQwzTzqZ30OjDdR35Bz.hJfaQk5ed',
-          'client_secret': 'BFD4920A9E80FC38ADBF870D32ABF7179E408DD8EC640E9D2181864E08A1D68D'
+          'client_id': '3MVG9OjW2TAjFKUtPVwmmFlS7b85FjBQWrh1TN0HcdXZ9JUMuogU9kjLK08wWV0z3yeYuCC0RCbxzoauvNIfk',
+          'client_secret': '2CC841E0816FA75DF77462A8039A4DDA81673902E4CD58D484163DFEECFCE342'
         },
         success: (result) => {
           setTimeout(() => {
             console.log(result);
           
             const appName = 'c:shop';
-            const componentName = 'c:testCmp';
-            const lightningEndpoint = 'https://java-dream-6325-dev-ed.scratch.lightning.force.com';
+            const componentName = 'c:shopManager';
+            const lightningEndpoint = 'https://velocity-flow-1819-dev-ed.scratch.lightning.force.com';
             const targetElement = document.querySelector("[data-lightning-out]");
             const componentAttributes = {
-              LanguageCode: 'de-DE'
+              configName: 'config',
+              pageSize: 5,
+              cardItemsGroupName: 'qwe'
             };
       
             $Lightning.use(
